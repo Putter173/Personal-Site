@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <style>
+        html {
+            background: #f0f0f3;
+            font-style: normal;
+            font-weight: normal;
+            font-family: Arial Rounded MT Bold;
+            color: #000;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+        header {
+            padding: 1.5em 5em;
+        }
+        #mainIcon {
+            height: 3em;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        a * {
+            display: inline;
+            vertical-align: middle;
+        }
+        a:hover,
+        a:active {
+            color: #484848;
+        }
+        #icons {
+            float: right;
+            padding-top: 0.25em;
+        }
+        #icons * {
+            padding-right: 0.125em;
+        }
+        #containerWrapper {
+            display: grid;
+            place-items: center;
+        }
+        #cardContainer {
+            width: 100vw;
+            height: fit-content;
+            padding: 2.5em;
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+        #cardContainer::-webkit-scrollbar {
+        display: none; 
+        }
+        .card {
+            display: inline-block;
+            height: 26.6666667vw;
+            width: 22.2222222vw;
+            min-width: 320px;
+            min-height: 384px;
+            border-radius: 50px;
+            margin-right: 6.25vw;
+            box-shadow: 10px 10px 30px rgba(174, 174, 192, 0.4), -10px -10px 30px #FFFFFF;
+        }
+        .card * {
+            display: table;
+            text-align: center;
+            width: 100%;
+            margin: 1.25vw 0;
+            font-size: 2em;
+            border-radius: 0 0 50px 50px;
+        }
+        #cardContainer:hover a {
+            color: #000;
+        }
+        @media only screen and (max-width: 768px) {
+            #containerWrapper {
+                display: block;
+                place-items: unset;
+            }
+            #cardContainer {       
+                white-space: break-spaces;
+                overflow-x: unset;
+            }
+            #cardContainer {
+                padding: 1em;
+            }
+            .card {
+                margin-right: 0;
+                border-radius: 40px;
+                min-width: 300px;
+                min-height: 364px;
+                margin-bottom: 12.5vw;
+            }
+            .card * {
+                border-radius: 0 0 40px 40px;
+                font-size: 2.5em;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function adjustVerticalAndHorizontal() {
+            head = document.getElementById("header").clientHeight
+            vh = window.innerHeight
+            height = vh - head
+            document.getElementById("containerWrapper").style.height = height + 'px'
+            vw = document.getElementById("header").clientWidth
+            width = vw - 80
+            console.log(vw)
+            console.log(width)
+            width = width / vw
+            width = width * 100
+            console.log(width)
+            if (vw < 768) {
+                document.getElementById("cardContainer").style.width = 'fit-content'
+            } else {
+                document.getElementById("cardContainer").style.width = width + 'vw'
+            }
+        }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <a href="#">
+            <h1>Putter V.</h1>
+        </a>
+        <span id="icons">
+            <a href="https://twitter.com/Putter_Vermont">
+                <i class="fab fa-2x fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/putter_27/">
+                <i class="fab fa-2x fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCWECknoQM_2IpdRfYe1GmjA">
+                <i class="fab fa-2x fa-youtube"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/chanapol-thornchanokpapon-4097201b5/">
+                <i class="fab fa-2x fa-linkedin"></i>
+            </a>
+        </span>
+    </header>
+    <div>
+        <div id="containerWrapper">
+            <div id="cardContainer">
+                <a>
+                    <div class="card">
+                        <h2>DOHI</h2>
+                        <img src="images/dohi.jpg">
+                    </div>
+                </a>
+                <a>
+                    <div class="card">
+                        <h2>Login</h2>
+                        <img src="images/nodeLogin.jpg">
+                    </div>
+                </a>
+                <a href="https://px2vw.putterv.com/">
+                    <div class="card">
+                        <h2>PX to VW</h2>
+                        <img src="images/px2vw.jpg">
+                    </div>
+                </a>
+                <a href="https://podio.studio/">
+                    <div class="card">
+                        <h2>Podio Studios</h2>
+                        <img src="images/podioStudiosFavicon.jpg">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
