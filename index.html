@@ -89,18 +89,21 @@
                 overflow-x: unset;
             }
             #cardContainer {
-                padding: 1em;
+                padding: 6.4vw;
             }
             .card {
-                margin-right: 0;
+                margin: 0;
                 border-radius: 40px;
-                min-width: 300px;
-                min-height: 364px;
-                margin-bottom: 12.5vw;
+                width: 87.2vw;
+                min-height: 300px;
+                height: 122.5vw;
             }
             .card * {
-                border-radius: 0 0 40px 40px;
                 font-size: 2.5em;
+            }
+            .card img {
+                
+                border-radius: 0 0 40px 40px;
             }
         }
     </style>
@@ -112,11 +115,8 @@
             document.getElementById("containerWrapper").style.height = height + 'px'
             vw = document.getElementById("header").clientWidth
             width = vw - 80
-            console.log(vw)
-            console.log(width)
             width = width / vw
             width = width * 100
-            console.log(width)
             if (vw < 768) {
                 document.getElementById("cardContainer").style.width = 'fit-content'
             } else {
